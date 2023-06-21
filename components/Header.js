@@ -4,7 +4,7 @@ import { SearchIcon, GlobeAltIcon, MenuIcon, UserCircleIcon } from '@heroicons/r
 
 function Header() {
   return (
-  <header className='sticky top-0 z-50 grid grid-cols-3 bg-blue-100 shadow-md p-5 md:px-10 md:shadow-md'>
+  <header className='sticky top-0 z-50 grid grid-cols-3 bg-blue-500 shadow-md p-5 md:px-10 md:shadow-md'>
     {/* left */}
     <div className="relative flex items-center h-10 cursor-pointer my-auto">
       <Image src={logo}
@@ -21,7 +21,7 @@ function Header() {
     </div>
 
     {/* right */}
-    <div className='flex items-center space-x-3 justify-end text-gray-500'>
+    <div className='flex items-center space-x-3 justify-end text-gray-50'>
       <p className='hidden md:inline cursor-pointer'>Register your diving center</p>
       <GlobeAltIcon className='h-6 cursor-pointer' />
 
