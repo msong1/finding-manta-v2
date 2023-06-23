@@ -3,12 +3,15 @@ import { StarIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 import Link from "next/link";
 
-function InfoCard({ img, name, region, country, lat, lon, animals, description }) {
+function InfoCard({ data }) {
+  const {name, lat, lng, loggedDives, averageRating,images} = data.properties;
+  const { description1 } = data.text;
+  const animals = ['Manta ray', 'Green Moray', 'Hammerhead shark']
   return (
     <div className="flex py-7 px-2 border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-200 ease-out first:border-t">
       {/* cover */}
       <div className="relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0">
-        <Image className=" rounded-2xl" src={img} fill style={{ objectFit: 'cover', }} alt='beach' />
+        <Image className=" rounded-2xl" src={images.elements[0].detail} fill style={{ objectFit: 'cover', }} alt='beach' />
       </div>
       {/* right */}
       <div className="flex flex-col flex-grow pl-5">
@@ -21,9 +24,9 @@ function InfoCard({ img, name, region, country, lat, lon, animals, description }
         {/* <div className="flex border-b pt-2 " /> */}
 
         {/* LOCATION */}
-        <Link href='/' className=" underline">{`${country}, ${region}`}</Link>
+        <Link href='/' className=" underline">{`${lat}, ${lng}`}</Link>
 
-        <p>{description}</p>
+        <p>{description1}</p>
 
         <div className="flex pt-2 flex-grow items-start">
           {animals.map((item, index) => (
@@ -33,7 +36,7 @@ function InfoCard({ img, name, region, country, lat, lon, animals, description }
 
         <div className="flex justify-between items-end">
           <p className="flex items-center">
-            <StarIcon className="h-5 text-red-400" /> 4.7
+            <StarIcon className="h-5 text-red-400" /> {`${averageRating} (${loggedDives} reviews)`}
           </p>
           <div>
             <p className="button bg-blue-400">Learn more</p>
