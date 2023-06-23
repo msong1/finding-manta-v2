@@ -199,7 +199,7 @@ export default function Search({ params }) {
       </section>
       {/* map */}
       <section className="hidden lg:inline-flex lg:min-w-[600px] overflow:hidden lg:h-[90vh] lg:max-h-[1%]">
-        <Map />
+        <Map searchResults={searchResults} />
       </section>
     </main>
   )
