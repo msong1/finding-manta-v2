@@ -1,6 +1,7 @@
 'use client'
 
 import InfoCard from "@/components/InfoCard";
+import Map from "@/components/Map";
 import { useSearchParams } from "next/navigation"
 
 export default function Search({ params }) {
@@ -32,6 +33,10 @@ export default function Search({ params }) {
             />
           ))}
         </div>
+      </section>
+      {/* map */}
+      <section className="hidden lg:inline-flex lg:min-w-[600px] overflow:hidden lg:h-[90vh] lg:max-h-[1%]">
+        <Map />
       </section>
     </main>
   )

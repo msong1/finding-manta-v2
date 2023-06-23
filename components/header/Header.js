@@ -5,6 +5,7 @@ import { SearchIcon, GlobeAltIcon, MenuIcon, UserCircleIcon } from '@heroicons/r
 import Logo from './Logo'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 function Header() {
   const router = useRouter();
@@ -18,8 +19,10 @@ function Header() {
       <div className='flex items-center bg-white md:border-2 rounded-full py-2'>
         <input className='flex-grow pl-5 bg-transparent outline-none' type="text" placeholder='Search...'
           onChange={(e) => setSearchinput(e.target.value)} />
-        <SearchIcon className='hidden md:inline-flex h-8 bg-blue-400 text-white rounded-full p-2 cursor-pointer md:mx-2 flex-shrink-0' onClick={() => router.push(`/search?location=${searchInput}`)
-        } />
+
+        <Link href={`/search?location=${searchInput}`}>
+          <SearchIcon className='hidden md:inline-flex h-8 bg-blue-400 text-white rounded-full p-2 cursor-pointer md:mx-2 flex-shrink-0'/>
+        </Link>
       </div>
 
       {/* right */}
