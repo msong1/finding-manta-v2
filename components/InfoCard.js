@@ -4,14 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 function InfoCard({ data }) {
-  const {name, lat, lng, loggedDives, averageRating,images} = data.properties;
-  const { description1 } = data.text;
   const animals = ['Manta ray', 'Green Moray', 'Hammerhead shark']
+  const { name, description1, description2, longitude, latitude, imageSrc, rating } = data;
   return (
     <div className="flex py-7 px-2 border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-200 ease-out first:border-t">
       {/* cover */}
       <div className="relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0">
-        <Image className=" rounded-2xl" src={images.elements[0].detail} fill style={{ objectFit: 'cover', }} alt='beach' />
+        <Image className=" rounded-2xl" src={imageSrc} fill style={{ objectFit: 'cover', }} alt='beach' />
       </div>
       {/* right */}
       <div className="flex flex-col flex-grow pl-5">
@@ -24,7 +23,7 @@ function InfoCard({ data }) {
         {/* <div className="flex border-b pt-2 " /> */}
 
         {/* LOCATION */}
-        <Link href='/' className=" underline">{`${lat}, ${lng}`}</Link>
+        <Link href='/' className=" underline">{`${latitude}, ${longitude}`}</Link>
 
         <p>{description1}</p>
 
@@ -36,7 +35,8 @@ function InfoCard({ data }) {
 
         <div className="flex justify-between items-end">
           <p className="flex items-center">
-            <StarIcon className="h-5 text-red-400" /> {`${averageRating} (${loggedDives} reviews)`}
+            {/*  need to add (${loggedDives} reviews) */}
+            <StarIcon className="h-5 text-red-400" /> {`${rating}`}
           </p>
           <div>
             <p className="button bg-blue-400">Learn more</p>
