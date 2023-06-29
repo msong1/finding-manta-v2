@@ -45,6 +45,7 @@ model Account {
 
 model DiveSite {
   id String @id @default(auto()) @map("_id") @db.ObjectId
+  siteID Int
   name String
   description1 String?
   description2 String?
@@ -56,6 +57,11 @@ model DiveSite {
   country String?
   region String?
   rating Float @default(0)
+  loggedDives Int @default(0)
+  loggedUsers Int @default(0)
+  averageMaxDepth Int @default(0)
+  averageDivetime Int @default(0)
+  averageVis Int @default(0)
   animalIDs String[] @db.ObjectId
 
   animals Animal[] @relation(fields: [animalIDs], references: [id])
@@ -63,6 +69,7 @@ model DiveSite {
 
 model Animal {
   id String @id @default(auto()) @map("_id") @db.ObjectId
+  animalID String @unique
   name String @unique
   diveSiteIDs String[] @db.ObjectId
 

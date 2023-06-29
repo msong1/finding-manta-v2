@@ -5,11 +5,11 @@ import Link from "next/link";
 
 function InfoCard({ data }) {
   const animals = ['Manta ray', 'Green Moray', 'Hammerhead shark']
-  const { name, description1, description2, longitude, latitude, imageSrc, rating } = data;
+  const { name, description1, description2, longitude, latitude, imageSrc, rating, loggedDives } = data;
   return (
     <div className="flex py-7 px-2 border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-200 ease-out first:border-t">
       {/* cover */}
-      <div className="relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0">
+      <div className="relative h-24 w-40 xl:h-52 xl:w-80 flex-shrink-0">
         <Image className=" rounded-2xl" src={imageSrc} fill style={{ objectFit: 'cover', }} alt='beach' />
       </div>
       {/* right */}
@@ -36,7 +36,7 @@ function InfoCard({ data }) {
         <div className="flex justify-between items-end">
           <p className="flex items-center">
             {/*  need to add (${loggedDives} reviews) */}
-            <StarIcon className="h-5 text-red-400" /> {`${rating}`}
+            <StarIcon className="h-5 text-red-400" /> {`${rating} (${loggedDives.toLocaleString()} reviews)`}
           </p>
           <div>
             <p className="button bg-blue-400">Learn more</p>

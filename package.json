@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "dbSetup": "npx prisma db push",
+    "etl": "node data/etl.js"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
@@ -29,6 +31,7 @@
   "devDependencies": {
     "@types/node": "20.3.1",
     "@types/react": "18.2.14",
+    "node-fetch": "^3.3.1",
     "prisma": "^4.16.1"
   }
 }

@@ -1,4 +1,4 @@
-import prisma from "@/app/libs/prismadb";
+import prisma from "@/app/(libs)/prismadb";
 
 async function getSites(props) {
   try {
@@ -6,7 +6,9 @@ async function getSites(props) {
 
     const diveSites = await prisma.diveSite.findMany({
       where: where,
-      orderBy: orderBy
+      orderBy: orderBy,
+      take: 10,
+      skip: 0,
     })
 
     return diveSites

@@ -11,15 +11,15 @@ function Map({ searchResults }) {
     latitude
   }))
   const center = getCenter(coodrinates);
+  console.log(center)
   return (
     <ReactMapGL
       initialViewState={{
-        // longitude: -122.4376,
-        // latitude: 37.7577,
-        zoom: 7,
+...center,
+        zoom: 1,
         ...center
       }}
-      style={{ width: '100%', height: '90vh' }}
+      style={{ width: '100%', height: '100%' }}
       cursor='grab'
       mapStyle="mapbox://styles/cosnim61/clj7u4tnm002n01rjdmqdamxa"
       mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
@@ -31,6 +31,7 @@ function Map({ searchResults }) {
             latitude={latitude}
             offset={[0, -5]}
           ><p
+            role='img'
             className=' cursor-pointer text-2xl animate-bounce'
             onClick={() => setSelectedLocation(name)}
             aria-label='push-pin'>
@@ -40,7 +41,7 @@ function Map({ searchResults }) {
           {/* Map pop-up */}
           {selectedLocation == name &&
             <Popup
-              onClose={() => {setSelectedLocation({})}}
+              onClose={() => { setSelectedLocation({}) }}
               closeOnClick={false}
               longitude={longitude}
               latitude={latitude}

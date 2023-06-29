@@ -12,8 +12,7 @@ async function getMarineLife() {
 }
 
 async function getRegions() {
-  const sampleData = [{name: "Asia", img: "/img/regions/asia.webp" }, {name: "Africa", img: "/img/regions/africa.webp"}, {name: "Europe", img: "/img/regions/europe.webp"}, {name: "Caribbean", img: "/img/regions/caribbean.webp"}, {name: "Central America", img: "/img/regions/centralamerica.webp"}, {name: "Indian Ocean", img: "/img/regions/indianocean.webp"}, {name: "Middle East & Red Sea", img: "/img/regions/middleeast.webp"}, {name: "North America", img: "/img/regions/na.webp"}, {name: "South America", img: "/img/regions/sa.webp"}, {name: "The Pacific", img: "/img/regions/pacific.webp"}]
-  return sampleData;
+  return [{name: "Asia", img: "/img/regions/asia.webp" }, {name: "Africa", img: "/img/regions/africa.webp"}, {name: "Europe", img: "/img/regions/europe.webp"}, {name: "Caribbean", img: "/img/regions/caribbean.webp"}, {name: "Central America", img: "/img/regions/centralamerica.webp"}, {name: "Indian Ocean", img: "/img/regions/indianocean.webp"}, {name: "Middle East & Red Sea", img: "/img/regions/middleeast.webp"}, {name: "North America", img: "/img/regions/na.webp"}, {name: "South America", img: "/img/regions/sa.webp"}, {name: "The Pacific", img: "/img/regions/pacific.webp"}];
 }
 
 
@@ -35,7 +34,7 @@ export default async function Home() {
         </section>
         <section>
           <h2 className='text-4xl font-semibold py-8'>Browse by region </h2>
-          <div className='flex space-x-3 overflow-x-scroll p-3'>
+          <div className='flex space-x-3 p-3 overflow-x-auto'>
           {/* might need to use scroll-hide */}
             {regions?.map(({name, img}, id) => (
               <MediumCard name={name} img={img} key={id} />
