@@ -10,7 +10,7 @@ import getSites from "../(actions)/getSites";
 export default async function Search({ searchParams }) {
 
   const { country, region, animals } = searchParams;
-  console.log(searchParams,11);
+  console.log(searchParams,22);
 
   // const isEmpty = false;
 
@@ -55,14 +55,12 @@ export default async function Search({ searchParams }) {
             <p className="button">Sort by rating</p>
             <p className="button">Beginner friendly</p>
           </div>
-          {/* <InfiniteScroll> */}
             {searchResults.map((item, index) => (
               <InfoCard
                 data={item}
                 key={index}
               />
             ))}
-          {/* </InfiniteScroll> */}
         </section>
         {/* map */}
         <section className="hidden lg:inline-flex lg:min-w-[600px] lg:w-[100%] lg:max-h-[calc(100vh-100px)]">

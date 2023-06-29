@@ -3,6 +3,7 @@ import prisma from "@/app/(libs)/prismadb";
 async function getSites(props) {
   try {
     const { where, orderBy } = props
+    console.log(props,111)
 
     const diveSites = await prisma.diveSite.findMany({
       where: where,
