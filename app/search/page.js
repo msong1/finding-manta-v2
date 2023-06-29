@@ -47,7 +47,6 @@ export default async function Search({ searchParams }) {
     <ClientOnly>
       <main className="flex">
         <section className="flex-grow p5-14 px-6 max-w-[950px] max-h-[calc(100vh-175px)] overflow-y-scroll">
-          {/* <p className="text-xs">300+ Sites found in {searchParams.get('location')}</p> */}
 
           <h1 className="text-3xl font-semibold mt-2 mb-6">Find Mantas here</h1>
           <div className="hidden md:inline-flex mb-5 space-x-3 text-gray-800 whitespace-nowrap">
@@ -66,7 +65,6 @@ export default async function Search({ searchParams }) {
         </section>
         {/* map */}
         <section className="hidden lg:inline-flex lg:min-w-[600px] lg:w-[100%] lg:max-h-[calc(100vh-100px)]">
-          {/* overflow:hidden lg:h-[90vh] lg:max-h-[1%] */}
           <Map searchResults={searchResults} />
         </section>
       </main>

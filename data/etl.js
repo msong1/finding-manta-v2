@@ -21,7 +21,7 @@ function loadJSON(jsonPath, callback) {
 }
 
 async function convertAndCreateDocument(data) {
-  const convertedData = data.slice(0,200).map(entry => ({
+  const convertedData = data.slice(0,500).map(entry => ({
     siteID: parseInt(entry.data.properties.id),
     name: entry.data.properties.name,
     description1: entry.data.text.description1,
