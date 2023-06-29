@@ -45,7 +45,7 @@ model Account {
 
 model DiveSite {
   id String @id @default(auto()) @map("_id") @db.ObjectId
-  siteID Int @unique
+  siteID Int? @unique
   name String
   description1 String?
   description2 String?
