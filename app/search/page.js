@@ -5,7 +5,7 @@ import Map from "@/components/Map";
 import getSites from "../(actions)/getSites";
 import ClientOnly from "@/components/ClientOnly";
 import EmptyState from "@/components/EmptyState";
-import InfiniteScroll from "@/components/InfiniteScroll";
+// import InfiniteScroll from "@/components/InfiniteScroll";
 
 export default async function Search({ searchParams }) {
 

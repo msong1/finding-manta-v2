@@ -10,7 +10,11 @@ const ClientOnly = ({ children }) => {
 
   if (!hasMounted) return null
 
-  return <>{children}</>
+  return (
+  <>
+  {children}
+  </>
+  )
 }
 
 export default ClientOnly
