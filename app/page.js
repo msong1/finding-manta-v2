@@ -12,7 +12,13 @@ async function getMarineLife() {
 }
 
 async function getRegions() {
-  return [{name: "Asia", img: "/img/regions/asia.webp" }, {name: "Africa", img: "/img/regions/africa.webp"}, {name: "Europe", img: "/img/regions/europe.webp"}, {name: "Caribbean", img: "/img/regions/caribbean.webp"}, {name: "Central America", img: "/img/regions/centralamerica.webp"}, {name: "Indian Ocean", img: "/img/regions/indianocean.webp"}, {name: "Middle East & Red Sea", img: "/img/regions/middleeast.webp"}, {name: "North America", img: "/img/regions/na.webp"}, {name: "South America", img: "/img/regions/sa.webp"}, {name: "The Pacific", img: "/img/regions/pacific.webp"}];
+  return [
+    {name: "Asia", img: "/img/regions/asia.webp" },
+  // {name: "Africa", img: "/img/regions/africa.webp"},
+  {name: "Europe", img: "/img/regions/europe.webp"},
+  {name: "North America", img: "/img/regions/na.webp"},
+  {name: "South America", img: "/img/regions/sa.webp"},
+];
 }
 
 

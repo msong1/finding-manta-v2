@@ -55,14 +55,14 @@ export default async function Search({ searchParams }) {
             <p className="button">Sort by rating</p>
             <p className="button">Beginner friendly</p>
           </div>
-          <InfiniteScroll>
+          {/* <InfiniteScroll> */}
             {searchResults.map((item, index) => (
               <InfoCard
                 data={item}
                 key={index}
               />
             ))}
-          </InfiniteScroll>
+          {/* </InfiniteScroll> */}
         </section>
         {/* map */}
         <section className="hidden lg:inline-flex lg:min-w-[600px] lg:w-[100%] lg:max-h-[calc(100vh-100px)]">
