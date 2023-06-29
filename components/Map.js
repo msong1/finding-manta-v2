@@ -11,7 +11,7 @@ function Map({ searchResults }) {
     latitude
   }))
   const center = getCenter(coodrinates);
-  console.log(center)
+
   return (
     <ReactMapGL
       initialViewState={{

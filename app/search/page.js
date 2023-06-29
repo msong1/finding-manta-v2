@@ -3,23 +3,24 @@
 import InfoCard from "@/components/InfoCard";
 import Map from "@/components/Map";
 import getSites from "../(actions)/getSites";
-import ClientOnly from "@/components/ClientOnly";
-import EmptyState from "@/components/EmptyState";
+// import ClientOnly from "@/components/ClientOnly";
+// import EmptyState from "@/components/EmptyState";
 // import InfiniteScroll from "@/components/InfiniteScroll";
 
 export default async function Search({ searchParams }) {
 
   const { country, region, animals } = searchParams;
+  console.log(searchParams,11);
 
-  const isEmpty = false;
+  // const isEmpty = false;
 
-  if (isEmpty) {
-    return (
-      <ClientOnly>
-        <EmptyState />
-      </ClientOnly>
-    )
-  }
+  // if (isEmpty) {
+  //   return (
+  //     <ClientOnly>
+  //       <EmptyState />
+  //     </ClientOnly>
+  //   )
+  // }
   const searchResults = await getSites(
     {
       where: {
@@ -44,7 +45,7 @@ export default async function Search({ searchParams }) {
   )
 
   return (
-    <ClientOnly>
+    // <ClientOnly>
       <main className="flex">
         <section className="flex-grow p5-14 px-6 max-w-[950px] max-h-[calc(100vh-175px)] overflow-y-scroll">
 
@@ -68,6 +69,6 @@ export default async function Search({ searchParams }) {
           <Map searchResults={searchResults} />
         </section>
       </main>
-    </ClientOnly>
+    // </ClientOnly>
   )
 }
